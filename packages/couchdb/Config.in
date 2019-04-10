@@ -1,0 +1,14 @@
+config BR2_PACKAGE_COUCHDB
+	bool "couchdb"
+	depends on BR2_USE_MMU # erlang, spidermonkey185
+	depends on !BR2_BINFMT_FLAT # icu
+	depends on BR2_INSTALL_LIBSTDCPP # icu, spidermonkey185
+	depends on BR2_PACKAGE_LIBATOMIC_OPS_ARCH_SUPPORTS # erlang
+	depends on !BR2_STATIC_LIBS # erlang
+	depends on BR2_TOOLCHAIN_HAS_THREADS # icu
+	depends on BR2_USE_WCHAR # icu
+
+	select BR2_PACKAGE_ERLANG
+	select BR2_PACKAGE_ICU
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_SPIDERMONKEY185

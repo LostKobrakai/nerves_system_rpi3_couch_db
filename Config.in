@@ -1,0 +1,5 @@
+menu "Custom Packages"
+
+source "$NERVES_DEFCONFIG_DIR/packages/couchdb/Config.in"
+
+endmenu
